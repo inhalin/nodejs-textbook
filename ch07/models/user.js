@@ -23,7 +23,9 @@ module.exports = class User extends Sequelize.Model {
     }, {
       sequelize,
       modelName: 'User',
+      underscored: true,
       timestamps: true,
+      paranoid: true, // deleted_at
     });
   }
   static associate(db) {

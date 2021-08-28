@@ -24,7 +24,9 @@ module.exports = class Post extends Sequelize.Model {
     }, {
       sequelize,
       modelName: 'Post',
+      underscored: true,
       timestamps: true,
+      paranoid: true,
     });
   }
   static associate(db) {

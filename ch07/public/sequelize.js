@@ -32,6 +32,10 @@ async function getUser() {
             td = document.createElement('td');
             td.textContent = user.info;
             row.appendChild(td);
+
+            td = document.createElement('td');
+            td.textContent = user.is_admin ? '관리자' : '일반회원';
+            row.appendChild(td);
             
             tbody.appendChild(row);
         });
@@ -82,7 +86,7 @@ async function getPost(id) {
                     }
 
                     if (newBody) {
-                        await axios.path(`/posts/${post.id}`, {
+                        await axios.patch(`/posts/${post.id}`, {
                             body: newBody,
                         });
                     }

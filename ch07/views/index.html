@@ -27,7 +27,7 @@
                 </div>
                 <div>
                     <label for="info">자기소개</label><br>
-                    <textarea name="info" id="info" cols="30" rows="5"></textarea>
+                    <input name="info" id="info" cols="30" rows="5"></input>
                 </div>
                 <button type="submit">등록</button>
             </fieldset>
@@ -41,6 +41,7 @@
                 <th>이름</th>
                 <th>나이</th>
                 <th>자기소개</th>
+                <th>구분</th>
             </tr>
         </thead>
         <tbody>
@@ -50,6 +51,7 @@
                 <td>{{ user.name }}</td>
                 <td>{{ user.age }}</td>
                 <td>{{ user.info }}</td>
+                <td>{{ '관리자' if user.is_admin else '일반회원' }}</td>
             </tr>
             {% endfor %}
         </tbody>

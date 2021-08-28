@@ -17,9 +17,11 @@ db.Sequelize = Sequelize;
 db.User = User;
 db.Post = Post;
 
+// 각 모델의 static init() 호출
 User.init(sequelize);
 Post.init(sequelize);
 
+// 테이블 관계 연결
 User.associate(db);
 Post.associate(db);
 
