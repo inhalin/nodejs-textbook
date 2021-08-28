@@ -83,7 +83,7 @@ async function getPost(id) {
                     }
 
                     if (newBody) {
-                        await axios.path(`/posts/${post.id}`, {
+                        await axios.patch(`/posts/${post.id}`, {
                             body: newBody,
                         });
                     }
